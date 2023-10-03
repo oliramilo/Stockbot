@@ -7,14 +7,8 @@ from discord.ext import commands
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
-# https://discord.com/api/oauth2/authorize?client_id=1158011238568165437&permissions=8&scope=bot
-
-
-
-
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
-
 
 try:
     # Get the bot token from the config.json file
