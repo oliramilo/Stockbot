@@ -7,7 +7,6 @@ from discord.ext import commands
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
-# https://discord.com/api/oauth2/authorize?client_id=1158011238568165437&permissions=8&scope=bot
 
 
 
@@ -37,13 +36,16 @@ async def on_ready():
 
 @bot.event
 async def on_guild_join(guild):
-    welcome_message = f"I just joined {guild.name}. It's time to make money!!!"
+    welcome_message = f"I just joined {guild.name}. It's time to make money!!!."
 
-    embed = discord.Embed(title="Tutorial", description="Commands for Stock Bot", color=0x3498db)
+    embed = discord.Embed(title="Stock analysis bot", description="Created by Oli Ramilo.", color=0x3498db)
+    embed.add_field(name="Tutorial", value="Commands for stock bot", inline=False)
     embed.add_field(name="!sh <stock_symbol> <period>", value="Displays a graph of the stock price over the specified period", inline=False)
     embed.add_field(name="!ss <stock_symbol>", value="Displays information about the stock", inline=False)
     embed.add_field(name="!msh <stock_symbol1> <stock_symbol2> <period>", value="Displays a graph of the stock price over the specified period for two stocks", inline=False)
     embed.add_field(name="Version Beta 1.0", value="I was just created today so chill if I don't work properly man jeez.", inline=False)
+    embed.add_field(name='Code repository', value='[Click Here](https://github.com/oliramilo)', inline=False)
+    
     with open('stonks.jpg', 'rb') as file:
         stonk_image = discord.File(file)
         embed.set_image(url='attachment://stonks.jpg')
