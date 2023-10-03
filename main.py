@@ -112,7 +112,7 @@ async def embed_stock_graph(ctx, stock_symbol1, stock_symbol2, period):
         plt.figure(figsize=(10, 5))
         plt.plot(stock_data1.index, stock_data1['Adj Close'], label=f'{stock_symbol1} Closing Price', color='blue')
         plt.plot(stock_data2.index, stock_data2['Adj Close'], label=f'{stock_symbol2} Closing Price', color='orange')
-        plt.title('Stock Closing Prices over the Last 10 Days')
+        plt.title('Stock Closing Prices over time')
         plt.xlabel(f'Time Period: ({period})', fontsize=8)
         plt.ylabel('Price (USD)')
         plt.grid(True)
@@ -138,7 +138,7 @@ async def embed_stock_graph(ctx, stock_symbol1, stock_symbol2, period):
 
         with open('multi_stock_plot.png', 'rb') as file:
             plot_image = discord.File(file)
-            embed = discord.Embed(title=f'{symbol1} vs {symbol2} Time Series Analysis', description='Closing price over the last 10 days', color=0x3498db)
+            embed = discord.Embed(title=f'{symbol1} vs {symbol2} Time Series Analysis', description='Closing price over time', color=0x3498db)
             embed.add_field(name=f'{symbol1} Volatility', value=volatility1)
             embed.add_field(name=f'{symbol1} Total Return', value=return_rate1)
             embed.add_field(name=f'{symbol2} Volatility', value=volatility2)
