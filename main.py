@@ -8,7 +8,6 @@ import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 try:
