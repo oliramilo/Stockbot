@@ -9,11 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-
-
-
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
-
 
 try:
     # Get the bot token from the config.json file
